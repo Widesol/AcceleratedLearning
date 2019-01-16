@@ -6,46 +6,60 @@ namespace Module6._1
     {
         static void Main(string[] args)
         {
-        Circle bob = new Circle("Bob", 8);
 
-        Circle lisa = new Circle("Lisa", 30);
 
-            lisa.SayHello();
-            bob.SayHello();
-            Console.WriteLine();
-            lisa.WriteArea();
-            bob.WriteArea();
+            var p1 = new Person();
+            p1.Name = "Pelle";
+            p1.Age = 2;
+            //p1.UntilRetirement = 15;
 
+            Console.WriteLine($"{p1.Name} är {p1.Age}år och går i pension {p1.UntilRetirement}år");
+            //Circle bobby = new Circle("Bobby", 8);
+            
+
+            //Circle ooo = new Circle("Bob");
+
+            //Circle2 bob = new Circle2();
+            ////bob.Name = "Bob";
+            //bob.Size = 8;
+
+            ////bob.Name = "Lisa";
+
+            //Console.WriteLine($"{bob.Name}");
+
+            //Circle lisa = new Circle("Lisa", 30);
+
+            //bob.SayHello();
+            //lisa.SayHello();
+            //lisa.WriteArea();
+            //bob.WriteArea();
 
         }
     }
 
-    class Circle
+    public class Circle
     {
+
+        string name;
+        int size;
         double pi = 3.14;
-       public void SayHello()
+
+        public Circle(string n, int a)
         {
-            Console.WriteLine("Hi im a circle with name " +  Namn);
+            name = n;
+            size = a;
+
         }
 
-        public string Namn { get; set; }
-
-
-        public void WriteArea()
+        internal void SayHello()
         {
-            Console.WriteLine("I have the radius of of "+Storlek +" and the area of " + Storlek*Storlek*pi);
+            Console.WriteLine($"Hi my name is {name}");
         }
 
-       public double Storlek { get; set; }
-
-
-        public Circle (string name, double size)
+        internal void WriteArea()
         {
-            Namn =name;
-            Storlek=size;
+            Console.WriteLine($"Hi my area is {size * size * pi}");
         }
-
-
     }
 
 }

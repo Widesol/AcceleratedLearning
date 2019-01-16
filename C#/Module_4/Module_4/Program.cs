@@ -4,12 +4,14 @@ namespace Module_4
 {
     class Program
     {
-        static string[] splittedList;
+        
 
         static void Main(string[] args)
         {
             string names=AskForNames();
+
             string[]nameArray=SplitNames(names);
+
             string[]trimmedArray=CleanUpArray(nameArray);
             PrintNames(trimmedArray);
 
@@ -19,15 +21,38 @@ namespace Module_4
 
         private static string AskForNames()
         {
-            Console.Write("Enter names: ");
-            string names = Console.ReadLine();
+            string names;
+            string tempNames;
+            do
+            {
+                Console.Write("Enter names: ");
+                tempNames = Console.ReadLine();
+                if (string.IsNullOrEmpty(tempNames))
+                {
+                    Console.WriteLine("The list doesn't contain any values");
+                }
+                else
+                {
+                    names = tempNames;
+                    break;
+                }
+            } while (true); 
+
+
             return names;
         }
 
         private static string[] SplitNames(string names)
         {
-            string[] nameArray = names.Split(",");
-            return nameArray;
+          
+            
+            string[] nameArray = names.Split(',');
+           
+
+             return nameArray;
+
+                
+            
         }
 
         private static string[] CleanUpArray(string[] nameArray)
